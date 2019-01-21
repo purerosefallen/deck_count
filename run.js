@@ -36,7 +36,7 @@ var done = 0;
 
 for (var k in decks_list) {
 	const deck=decks_list[k];
-	get("./deck/"+deck, function(res) {
+	get(deck_path+"/"+deck, function(res) {
 		done++;
 		if(res) {
 			console.log(deck+" --> "+res);
