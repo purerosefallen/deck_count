@@ -49,7 +49,7 @@ for (var k in decks_list) {
 		}
 		if(done==decks_list.length) {
 			console.log("Finished.");
-			console.log(result);
+			console.log(JSON.stringify(result, null, 2));
 		}
 	})
 }
