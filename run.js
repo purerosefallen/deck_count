@@ -24,8 +24,11 @@ function get(path, callback) {
 		callback(res);
 	});
 }
+var deck_path = "./deck";
+if(process.argv[2])
+    deck_path = process.argv[2];
 
-const decks_list = fs.readdirSync("./deck");
+const decks_list = fs.readdirSync(deck_path);
 
 console.log(decks_list.length + " decks.");
 
