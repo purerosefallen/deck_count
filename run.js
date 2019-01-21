@@ -11,18 +11,21 @@ function add_item(deck) {
 }
 
 function get(path, callback) {
-	const raw=fs.readFileSync(path, "utf8");
-	var result;
-	request.post({
-		url:"https://api.mycard.moe/ygopro/identifier/production",
-		form:{deck:raw}
-	}, function(error, response, body) {
-		if(error){
-			return null;
-		}
-		const res=JSON.parse(body).deck;
-		callback(res);
-	});
+	try {
+		const raw = fs.readFileSync(path, "utf8");
+		var result;
+		request.post({
+			url: "https://api.mycard.moe/ygopro/identifier/production",
+			form: { deck: raw }
+		}, function (error, response, body) {
+			if (error) {
+				return null;
+			}
+			const res = JSON.parse(body).deck;
+			callback(res);
+		});
+		
+	} catch (err) { }
 }
 var deck_path = "./deck";
 if(process.argv[2])
@@ -35,7 +38,7 @@ console.log(decks_list.length + " decks.");
 var done = 0;
 
 for (var k in decks_list) {
-	const deck=decks_list[k];
+	const deck = decks_list[k];
 	get(deck_path+"/"+deck, function(res) {
 		done++;
 		if(res) {
