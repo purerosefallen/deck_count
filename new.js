@@ -47,7 +47,8 @@ async function main() {
 	});
 	const pieData = {
 		labels,
-		series
+		series,
+		...config.extraData
 	}
 	const data = await chartistSvg("pie", pieData, {
 		options: config.options
