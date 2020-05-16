@@ -1,0 +1,8 @@
+path: "../../ygo/tourneys/single20205"
+output: "./test.html"
+options:
+  width: 1000
+  height: 1000
+extraData:
+  title: 卡组统计
+  subtitle: by YGOCore战队联盟

@@ -4,12 +4,17 @@
   "description": "",
   "main": "run.js",
   "dependencies": {
-    "request": "latest"
+    "axios": "^0.19.2",
+    "qs": "^6.9.4",
+    "request": "latest",
+    "svg-chartist": "^1.0.1",
+    "underscore": "^1.10.2",
+    "yaml": "^1.10.0"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "run": "node ./run.js"
+    "start": "node ./new.js"
   },
   "author": "",
   "license": "ISC"
